@@ -11,10 +11,6 @@
     "https://www.hsbc.co.uk/*",
     "storage"
   ],
-  "browser_action": {
-    "default_icon": "hsbc.png",
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": [
