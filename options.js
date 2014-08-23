@@ -16,19 +16,10 @@ function save_options() {
   if (error)
     return;
 
-  var d = new Date();
-  var current_time_string = d.getYear().toString() + d.getMonth().toString() + d.getDay().toString() + d.getHours().toString() + d.getMinutes().toString() + d.getSeconds().toString() + d.getMilliseconds().toString();
-  var current_string = 'current_name_' + current_time_string;
-  var new_string = 'new_name_' + current_time_string;
-  var current_obj = {},
-      new_obj = {};
+  var my_obj = {};
+  my_obj[current_name] = new_name;
 
-  current_obj[current_string] = current_name;
-  new_obj[new_string] = new_name;
-
-
-  chrome.storage.sync.set(current_obj);
-  chrome.storage.sync.set(new_obj);
+  chrome.storage.sync.set(my_obj);
   alert('Saved');
   populateTable();
 }

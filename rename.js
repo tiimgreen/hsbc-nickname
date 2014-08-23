@@ -1,10 +1,18 @@
 (function() {
-  var accounts = {
-    'STUDENT A/C': 'Spending Money',
-    'LOY ISA BANK': 'Long Term Savings ISA',
-    'FLEX SAVER': 'Essentials',
-    'CREDIT CARD': 'Credit Card'
-  };
+  // var accounts = {
+  //   'STUDENT A/C': 'Spending Money',
+  //   'LOY ISA BANK': 'Long Term Savings ISA',
+  //   'FLEX SAVER': 'Essentials',
+  //   'CREDIT CARD': 'Credit Card'
+  // };
+  var accounts = {}
+  chrome.storage.sync.get(null, function(items) {
+    for (var item in items) {
+      accounts[item] = items[item];
+    }
+  });
+
+  alert(accounts);
 
   var accountLength = 0;
 
