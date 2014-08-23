@@ -5,11 +5,15 @@
   "description": "Prettify account names in HSBC Internet Banking",
   "version": "0.0.1",
   "permissions": [
-    "http://www.hsbc.co.uk/*"
+    "http://www.hsbc.co.uk/*",
+    "https://www.hsbc.co.uk/*"
   ],
   "content_scripts": [
     {
-      "matches": ["http://www.hsbc.co.uk/*"],
+      "matches": [
+        "http://www.hsbc.co.uk/*",
+        "https://www.hsbc.co.uk/*"
+      ],
       "js": [
         "rename.js"
       ],
