@@ -19,8 +19,16 @@ function save_options() {
   var my_obj = {};
   my_obj[current_name] = new_name;
 
-  chrome.storage.sync.set(my_obj);
-  alert('Saved');
+  chrome.storage.sync.get(current_name, function(items) {
+    if (items && items[current_name] == new_name) {
+      alert('That account already exists, not saved');
+      return;
+    } else {
+      chrome.storage.sync.set(my_obj);
+      alert('Saved');
+    }
+  });
+
   populateTable();
 }
 
