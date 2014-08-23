@@ -5,9 +5,11 @@
   "description": "Prettify account names in HSBC Internet Banking",
   "version": "0.0.2",
   "homepage_url": "https://github.com/tiimgreen/hsbc-nickname",
+  "options_page": "options.html",
   "permissions": [
     "http://www.hsbc.co.uk/*",
-    "https://www.hsbc.co.uk/*"
+    "https://www.hsbc.co.uk/*",
+    "storage"
   ],
   "browser_action": {
     "default_icon": "hsbc.png",
