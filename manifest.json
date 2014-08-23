@@ -8,6 +8,10 @@
     "http://www.hsbc.co.uk/*",
     "https://www.hsbc.co.uk/*"
   ],
+  "browser_action": {
+    "default_icon": "hsbc.png",
+    "popup": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": [
