@@ -3,7 +3,7 @@
 
   "name": "HSBC Friendly Account Names",
   "description": "Prettify account names in HSBC Internet Banking",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "permissions": [
     "http://www.hsbc.co.uk/*",
     "https://www.hsbc.co.uk/*"
