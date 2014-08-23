@@ -19,9 +19,7 @@
         "http://www.hsbc.co.uk/*",
         "https://www.hsbc.co.uk/*"
       ],
-      "js": [
-        "rename.js"
-      ],
+      "js": ["jquery.js", "rename.js"],
       "run_at": "document_end"
     }
   ]
