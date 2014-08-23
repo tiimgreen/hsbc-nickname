@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "HSBC Friendly Account Names",
+  "description": "Prettify account names in HSBC Internet Banking",
+  "version": "0.0.1",
+  "permissions": [
+    "http://www.hsbc.co.uk/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.hsbc.co.uk/*"],
+      "js": [
+        "rename.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+}
