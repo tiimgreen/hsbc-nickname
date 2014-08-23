@@ -28,7 +28,7 @@ function populateTable() {
   chrome.storage.sync.get(null, function(items) {
     $('table#all_accounts tbody').empty();
     for (var item in items) {
-      $('table#all_accounts tbody').append('<tr><td>' + item + '</td><td>' + items[item] + '</td></tr>');
+      $('table#all_accounts tbody').append('<tr><td>' + item + '</td><td>' + items[item] + '</td><td><a href="#" class="delete-item">Delete</a></td></tr>');
     }
   });
 }
@@ -42,7 +42,18 @@ $('#delete_all_accounts').on('click', function(e) {
     }
     alert('Deleted');
   });
-})
+});
 
 populateTable();
-document.getElementById('save').addEventListener('click', save_options);
+
+$('#save').on('click', function(e) {
+  save_options();
+});
+
+$(document).on('click', '.delete-item', function(e) {
+  e.preventDefault();
+
+  var name = $(this).parent().siblings().first().text();
+  chrome.storage.sync.remove(name);
+  alert('deleted');
+});
