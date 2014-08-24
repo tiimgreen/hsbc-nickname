@@ -11,6 +11,11 @@
     "https://www.hsbc.co.uk/*",
     "storage"
   ],
+  "browser_action": {
+    "default_icon": "hsbc.png",
+    "default_title": "HSBC Friendly Account Names",
+    "default_popup": "popup.html"
+  },
   "background": {
     "scripts": ["background.js"]
   },
