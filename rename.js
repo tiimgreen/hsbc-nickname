@@ -10,8 +10,8 @@
   var accountLength = 0;
 
   chrome.runtime.sendMessage({method: "getItems"}, function(response) {
-    for (var item in response) {
-      accounts[item] = response[item];
+    for (var item in response.items) {
+      accounts[item] = response.items[item];
     }
 
     for (i in accounts) {
