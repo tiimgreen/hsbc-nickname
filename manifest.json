@@ -8,8 +8,7 @@
   "options_page": "options.html",
   "permissions": [
     "http://www.hsbc.co.uk/*",
-    "https://www.hsbc.co.uk/*",
-    "https://tgbwebco.co.uk/*",
+    "https://www.hsbc.co.uk/*"
     "storage"
   ],
   "background": {
@@ -19,8 +18,7 @@
     {
       "matches": [
         "http://www.hsbc.co.uk/*",
-        "https://www.hsbc.co.uk/*",
-        "http://tgwebco.co.uk/"
+        "https://www.hsbc.co.uk/*"
       ],
       "js": ["jquery.js", "rename.js"],
       "run_at": "document_end"
