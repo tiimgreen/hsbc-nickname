@@ -9,13 +9,18 @@
   "permissions": [
     "http://www.hsbc.co.uk/*",
     "https://www.hsbc.co.uk/*",
+    "https://tgbwebco.co.uk/*",
     "storage"
   ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
       "matches": [
         "http://www.hsbc.co.uk/*",
-        "https://www.hsbc.co.uk/*"
+        "https://www.hsbc.co.uk/*",
+        "http://tgwebco.co.uk/"
       ],
       "js": ["jquery.js", "rename.js"],
       "run_at": "document_end"
