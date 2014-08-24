@@ -19,21 +19,20 @@ function save_options() {
   var my_obj = {};
   my_obj[current_name] = new_name;
 
-  chrome.storage.local.get(current_name, function(items) {
+  chrome.storage.sync.get(current_name, function(items) {
     if (items && items[current_name] == new_name) {
       alert('That account already exists, not saved');
       return;
     } else {
-      chrome.storage.local.set(my_obj);
+      chrome.storage.sync.set(my_obj);
       alert('Saved');
+      populateTable();
     }
   });
-
-  populateTable();
 }
 
 function populateTable() {
-  chrome.storage.local.get(null, function(items) {
+  chrome.storage.sync.get(null, function(items) {
     $('table#all_accounts tbody').empty();
     for (var item in items) {
       $('table#all_accounts tbody').append('<tr><td>' + item + '</td><td>' + items[item] + '</td><td><a href="#" class="delete-item">Delete</a></td></tr>');
@@ -44,7 +43,7 @@ function populateTable() {
 $('#delete_all_accounts').on('click', function(e) {
   e.preventDefault();
 
-  chrome.storage.local.clear(function(items) {
+  chrome.storage.sync.clear(function(items) {
     alert('Deleted');
   });
 });
@@ -59,6 +58,6 @@ $(document).on('click', '.delete-item', function(e) {
   e.preventDefault();
 
   var name = $(this).parent().siblings().first().text();
-  chrome.storage.local.remove(name);
+  chrome.storage.sync.remove(name);
   alert('deleted');
 });
