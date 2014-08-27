@@ -1,3 +1,4 @@
+// Saves data in input boxes
 function save_options() {
   var current_name = $('#current_name').val();
   var new_name = $('#new_name').val();
@@ -31,6 +32,7 @@ function save_options() {
   });
 }
 
+// Populates table with all saves accounts and aliases
 function populateTable() {
   chrome.storage.sync.get(null, function(items) {
     $('table#all_accounts tbody').empty();
@@ -40,6 +42,10 @@ function populateTable() {
   });
 }
 
+// Populates table on load
+populateTable();
+
+// Deletes all accounts from memory
 $('#delete_all_accounts').on('click', function(e) {
   e.preventDefault();
 
@@ -48,12 +54,12 @@ $('#delete_all_accounts').on('click', function(e) {
   });
 });
 
-populateTable();
-
+// Saves information in input boxes
 $('#save').on('click', function(e) {
   save_options();
 });
 
+// Deletes given item
 $(document).on('click', '.delete-item', function(e) {
   e.preventDefault();
 

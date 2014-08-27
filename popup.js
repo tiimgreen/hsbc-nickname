@@ -7,6 +7,7 @@ function populateTable() {
   });
 }
 
+// Opens a new options tab when clicked
 $('#change_accounts').on('click', function (e) {
   e.preventDefault();
 
