@@ -1,11 +1,4 @@
 (function() {
-  // var accounts = {
-  //   'STUDENT A/C': 'Spending Money',
-  //   'LOY ISA BANK': 'Long Term Savings ISA',
-  //   'FLEX SAVER': 'Essentials',
-  //   'CREDIT CARD': 'Credit Card'
-  // };
-
   var accounts = {};
   var accountLength = 0;
 
